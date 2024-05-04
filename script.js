@@ -111,3 +111,38 @@ let sumArray = array5.reduce((accumulator, currentValue) => {
 },1);
 
 console.log(sumArray);
+
+
+/// Write an asynchronous function using async-await  to fetch data from an API (you can use the JSONPlaceholder API) and log the result.
+
+async function fetchData() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const data = await response.json();
+    console.log(data);
+  }
+  catch (error) {
+    console.log(error);
+  }
+
+}
+fetchData();
+
+
+
+// Define a nested object representing a person with properties like name, address, and contact. Use optional chaining to safely access the person's phone number, even if the contact property is missing.
+
+
+const person = {
+  name: 'John',
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+}
+
+
+console.log(person?.address?.city);
+const number = person?.address?.number;
+
+console.log(number);
